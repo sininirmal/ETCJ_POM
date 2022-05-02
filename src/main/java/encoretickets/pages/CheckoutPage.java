@@ -16,8 +16,10 @@ public class CheckoutPage extends Base {
 	@FindBy(xpath="//canvas")
 	WebElement canvas;
 	
-	@FindBy(xpath="//div[@class=\"gui-layout hidden normal visible\"]")
+	@FindBy(xpath="//div[@class='gui-layout hidden normal visible']")
 	WebElement visiblearea;
+	@FindBy(xpath="//div[div[text()='GRAND CIRCLE'] and span[text()='A'] and span[text()='2']]")
+	WebElement seat;
 	
 	
 public CheckoutPage() {
@@ -39,17 +41,29 @@ Dimension visibleareadimension =visiblearea.getSize();
 System.out.println("visible area size :"+visibleareadimension);
 int visiblearea_center_x = visibleareadimension.getWidth()/2;
 int visiblearea_center_y = visibleareadimension.getHeight()/2;
-int visible_button_X= (visiblearea_center_x/8)*3;
-int visible_button_Y= (visiblearea_center_y/4)*3;
+//int visible_button_X= (visiblearea_center_x/8)*3;
+//int visible_button_Y= (visiblearea_center_y/8)*6;
 System.out.println("visible area width:"+visiblearea_center_x);
 System.out.println("visible area Height:"+visiblearea_center_y);
 
-System.out.println("visible_button_X  :"+visible_button_X);
-System.out.println("visible_button_Y  :"+visible_button_Y);
+for(int i=visiblearea_center_x;i<visibleareadimension.getWidth(); i=1+10)
+{
+	for (int j=visiblearea_center_y;j<visibleareadimension.getHeight();j=j+50) {
+	Actions actions1 = new Actions(driver);
+	actions1.moveToElement(visiblearea, i, j).perform();
+	System.out.println("visible_button_X  :"+i);
+	System.out.println("visible_button_Y  :"+j);
+//	if (seat.isDisplayed()) {
+//		actions1.moveToElement(visiblearea, i, j).click().build().perform();
+//	}
+	
+}}
 
-Actions actions1 = new Actions(driver);
-//actions.moveToElement(canvas, button_X, button_Y).click().perform();
-actions1.moveToElement(visiblearea, visible_button_X, visible_button_Y).click().build().perform();
+
+
+//Actions actions1 = new Actions(driver);
+////actions.moveToElement(canvas, button_X, button_Y).click().perform();
+//actions1.moveToElement(visiblearea, visible_button_X, visible_button_Y).click().build().perform();
 Thread.sleep(6000);
 }
 
