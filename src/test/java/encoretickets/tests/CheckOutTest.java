@@ -29,8 +29,8 @@ import java.util.Arrays;
 
 
 public class CheckOutTest extends Base{
-	String fromdate = "20220508";
-	String Todate = "20220530";
+	String fromdate = "20220522";
+	String Todate = "20220522";
 	String randomdate;
 	String randomtime;
 	String seat1;
