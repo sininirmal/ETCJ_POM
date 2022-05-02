@@ -112,11 +112,13 @@ public class CheckOutTest extends Base{
 		checkoutPage = new CheckoutPage();
 		searchpage.search();
 		dateselectionPage.dateselection(newDate,randomtime);
-		
+		Thread.sleep(20000);
+		checkoutPage.seatselection();
 		driver.close();
 		
 		
 	}
+	
 	
 	
 	

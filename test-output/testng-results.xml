@@ -2,16 +2,16 @@
 <testng-results total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-02T13:01:13Z" name="Default suite" finished-at="2022-05-02T13:02:05Z" duration-ms="51367">
+  <suite started-at="2022-05-02T20:07:33Z" name="Default suite" finished-at="2022-05-02T20:09:13Z" duration-ms="99948">
     <groups>
     </groups>
-    <test started-at="2022-05-02T13:01:13Z" name="Default test" finished-at="2022-05-02T13:02:05Z" duration-ms="51367">
+    <test started-at="2022-05-02T20:07:33Z" name="Default test" finished-at="2022-05-02T20:09:13Z" duration-ms="99948">
       <class name="encoretickets.tests.CheckOutTest">
-        <test-method signature="apitest()[pri:0, instance:encoretickets.tests.CheckOutTest@12359a82]" started-at="2022-05-02T14:01:13Z" name="apitest" finished-at="2022-05-02T14:01:22Z" duration-ms="8223" status="PASS">
+        <test-method signature="apitest()[pri:0, instance:encoretickets.tests.CheckOutTest@12359a82]" started-at="2022-05-02T21:07:33Z" name="apitest" finished-at="2022-05-02T21:07:43Z" duration-ms="9826" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- apitest -->
-        <test-method signature="searchText()[pri:0, instance:encoretickets.tests.CheckOutTest@12359a82]" started-at="2022-05-02T14:01:22Z" name="searchText" finished-at="2022-05-02T14:02:05Z" duration-ms="43108" status="PASS">
+        <test-method signature="searchText()[pri:0, instance:encoretickets.tests.CheckOutTest@12359a82]" started-at="2022-05-02T21:07:43Z" name="searchText" finished-at="2022-05-02T21:09:13Z" duration-ms="90087" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchText -->
