@@ -43,21 +43,35 @@ int visiblearea_center_x = visibleareadimension.getWidth()/2;
 int visiblearea_center_y = visibleareadimension.getHeight()/2;
 //int visible_button_X= (visiblearea_center_x/8)*3;
 //int visible_button_Y= (visiblearea_center_y/8)*6;
-System.out.println("visible area width:"+visiblearea_center_x);
-System.out.println("visible area Height:"+visiblearea_center_y);
+int visible_button_X= (visiblearea_center_x/16)*1;
+int visible_button_Y= (visiblearea_center_y/16)*1;
+for(int i=1;i<16; i++) {
+	for(int j=1;j<16;j++) {
+		visible_button_X= (visiblearea_center_x/16)*i;
+		visible_button_Y= (visiblearea_center_y/16)*j;
+		Actions actions1 = new Actions(driver);
+		actions1.moveToElement(visiblearea, visible_button_X, visible_button_Y).click().build().perform();
+		System.out.println("visible area width:"+visible_button_X);
+		System.out.println("visible area Height:"+visible_button_Y);
+//		if (seat.isDisplayed()) {
+//			actions1.moveToElement(visiblearea, visible_button_X, visible_button_Y).click().build().perform();
+//		}
+	}}
+	
 
-for(int i=visiblearea_center_x;i<visibleareadimension.getWidth(); i=1+10)
-{
-	for (int j=visiblearea_center_y;j<visibleareadimension.getHeight();j=j+50) {
-	Actions actions1 = new Actions(driver);
-	actions1.moveToElement(visiblearea, i, j).perform();
-	System.out.println("visible_button_X  :"+i);
-	System.out.println("visible_button_Y  :"+j);
+
+//for(int i=visiblearea_center_x;i<visibleareadimension.getWidth(); i=1+10)
+//{
+//	for (int j=visiblearea_center_y;j<visibleareadimension.getHeight();j=j+50) {
+//	Actions actions1 = new Actions(driver);
+//	actions1.moveToElement(visiblearea, i, j).perform();
+//	System.out.println("visible_button_X  :"+i);
+//	System.out.println("visible_button_Y  :"+j);
 //	if (seat.isDisplayed()) {
 //		actions1.moveToElement(visiblearea, i, j).click().build().perform();
 //	}
 	
-}}
+//}}
 
 
 
