@@ -40,6 +40,8 @@ public class CheckOutTest extends Base{
 	CheckoutPage checkoutPage;
 	String availableday;
 	String newDate;
+	String apirandomdate;
+	String apirandomtime;
 	
 //	public CheckOutTest() {
 //		super();
@@ -47,7 +49,7 @@ public class CheckOutTest extends Base{
 
 			
 	@Test(priority=1)
-	public void apitest() {
+	public void apiTest() {
 		Response res=
 		given().
 		header("affiliateId","encoretickets").
@@ -69,8 +71,8 @@ public class CheckOutTest extends Base{
 	      System.out.println(rnd);
 	      String randomdatetime=dt[rnd];
 	      System.out.println("random datetime"+randomdatetime);
-	      String apirandomdate = randomdatetime.substring(0, 10).replaceAll("[^a-zA-Z0-9]","");
-	      String apirandomtime = randomdatetime.substring(11, 16).replaceAll("[^a-zA-Z0-9]","");
+	      apirandomdate = randomdatetime.substring(0, 10).replaceAll("[^a-zA-Z0-9]","");
+	      apirandomtime = randomdatetime.substring(11, 16).replaceAll("[^a-zA-Z0-9]","");
 	      availableday = randomdatetime.substring(0,10);
 	      System.out.println("random date  :  "+availableday);
 	      
@@ -105,7 +107,7 @@ public class CheckOutTest extends Base{
 	    
 	      }
 	@Test(priority=2)
-	public void searchText() throws Throwable{
+	public void checkoutJourney() throws Throwable{
 		init();
 		searchpage = new SearchPage();
 		dateselectionPage = new DateSelectionPage();
@@ -118,8 +120,12 @@ public class CheckOutTest extends Base{
 		
 		
 	}
+
 	
+ 
+
 	
+ 
 	
 	
 	

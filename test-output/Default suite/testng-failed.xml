@@ -5,7 +5,7 @@
     <classes>
       <class name="encoretickets.tests.CheckOutTest">
         <methods>
-          <include name="searchText"/>
+          <include name="checkoutJourney"/>
         </methods>
       </class> <!-- encoretickets.tests.CheckOutTest -->
     </classes>
