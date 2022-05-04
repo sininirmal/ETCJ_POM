@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+import org.openqa.selenium.Dimension;
 
 
 
@@ -39,7 +39,8 @@ public static void init() {
 //driver = new ChromeDriver();
 WebDriverManager.chromedriver().setup();
 driver = new ChromeDriver();
- driver.manage().window().maximize();
+driver.manage().window().setSize(new Dimension(1253,720));
+ //driver.manage().window().maximize();
  driver.manage().deleteAllCookies();
  
  driver.get("https://www.encoretickets.co.uk");

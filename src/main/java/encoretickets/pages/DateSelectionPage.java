@@ -1,11 +1,9 @@
 package encoretickets.pages;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+
 import org.openqa.selenium.support.PageFactory;
 
 import encoretickets.base.Base;
@@ -22,7 +20,7 @@ public class DateSelectionPage extends Base {
 By TimeToSelect = By.xpath("//input[@type='radio']");
 By PickYourSeats= By.xpath("//button[@class='o-btn o-btn__ticket o-btn--quicksearch o-btn__cta o-btn__cta--primary u-w--100% t-btn o-btn__cta--mobile t-btn-super']");
 public void dateselection(String availableday,String randomtime) throws Throwable {
-Thread.sleep(10000);	
+Thread.sleep(8000);	
 By dateToSelect = By.xpath("//span[@aria-label='"+availableday+"']");
 driver.findElement(dateToSelect).click();
 
@@ -62,11 +60,12 @@ driver.findElement(dateToSelect).click();
 //	}
 	By TimetoSelect = By.xpath("//span[@class='c-quick-search__timeslot-time' and text()='"+randomtime+"']");
 	driver.findElement(TimetoSelect).click();
+	Thread.sleep(1000);  
 	WebElement PickYourSeatsbutton = driver.findElement(PickYourSeats);
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	js.executeScript("arguments[0].click()", PickYourSeatsbutton);
 	
-	Thread.sleep(10000);  
+	Thread.sleep(5000);  
 		
 		
 	}

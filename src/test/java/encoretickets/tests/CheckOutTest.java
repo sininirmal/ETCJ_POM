@@ -2,24 +2,14 @@
 
 package encoretickets.tests;
 import java. util. Random;
-
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-
 import static io.restassured.RestAssured.*;
-
 import encoretickets.base.Base;
 import encoretickets.pages.CheckoutPage;
 import encoretickets.pages.DateSelectionPage;
 import encoretickets.pages.SearchPage;
-
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -28,9 +18,10 @@ import java.util.Arrays;
 
 
 
+
 public class CheckOutTest extends Base{
-	String fromdate = "20220522";
-	String Todate = "20220522";
+	String fromdate = "20220523";
+	String Todate = "20220523";
 	String randomdate;
 	String randomtime;
 	String seat1;
@@ -43,9 +34,9 @@ public class CheckOutTest extends Base{
 	String apirandomdate;
 	String apirandomtime;
 	
-//	public CheckOutTest() {
-//		super();
-//	} 
+	public CheckOutTest() {
+		super();
+	} 
 
 			
 	@Test(priority=1)
@@ -114,8 +105,8 @@ public class CheckOutTest extends Base{
 		checkoutPage = new CheckoutPage();
 		searchpage.search();
 		dateselectionPage.dateselection(newDate,randomtime);
-		Thread.sleep(20000);
-		checkoutPage.seatselection();
+		
+		checkoutPage.seatselection(seat1);
 		driver.close();
 		
 		
