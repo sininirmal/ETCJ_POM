@@ -14,13 +14,13 @@ pipeline {
             }
         }
 
-        stage ('Build') {
+        stage ('Build and Test') {
             steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
             post {
                 success {
-                    junit 'target/surefire-reports/**/*.xml' 
+                    TestNG report 'test-output/index.html' 
                 }
             }
         }
