@@ -20,7 +20,7 @@ pipeline {
             }
             post {
                 success {
-                    testng 'test-output/index.html' 
+                    junit 'test-output/index.html' 
                 }
             }
         }
