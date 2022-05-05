@@ -16,8 +16,8 @@ import java.time.format.DateTimeFormatterBuilder;
 import java.util.Arrays;
 
 public class CheckOutTest extends Base{
-	String fromdate = "20220522";
-	String Todate = "20220522";
+	String fromdate = "20220523";
+	String Todate = "20220523";
 	String randomdate;
 	String randomtime;
 	String seat1;
