@@ -15,13 +15,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Arrays;
 
-
-
-
-
 public class CheckOutTest extends Base{
-	String fromdate = "20220523";
-	String Todate = "20220523";
+	String fromdate = "20220522";
+	String Todate = "20220522";
 	String randomdate;
 	String randomtime;
 	String seat1;
@@ -38,7 +34,7 @@ public class CheckOutTest extends Base{
 		super();
 	} 
 
-			
+// """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""		
 	@Test(priority=1)
 	public void apiTest() {
 		Response res=
@@ -92,11 +88,10 @@ public class CheckOutTest extends Base{
 	      seat2 = i.getString("response.areas[0].groupings[0].seatLumps[0].seats[1]");
 	      System.out.println(seat1+"\n");
 	      System.out.println(seat2+"\n");
-
-			
-			
 	    
 	      }
+	
+// """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""	
 	@Test(priority=2)
 	public void checkoutJourney() throws Throwable{
 		init();
@@ -106,15 +101,27 @@ public class CheckOutTest extends Base{
 		searchpage.search();
 		dateselectionPage.dateselection(newDate,randomtime);
 		
-		checkoutPage.seatselection(seat1);
+		checkoutPage.restrictedSeatSelectionAndCheckout(seat1);
+		driver.close();
+				
+	}
+
+// """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""	
+	@Test(priority=3)
+	public void restrictedcheckoutJourney() throws Throwable{
+		init();
+		searchpage = new SearchPage();
+		dateselectionPage = new DateSelectionPage();
+		checkoutPage = new CheckoutPage();
+		searchpage.search();
+		dateselectionPage.dateselection(newDate,randomtime);
+		
+		checkoutPage.seatselectionandCheckout(seat1);
 		driver.close();
 		
 		
 	}
-
-	
- 
-
+// """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""	
 	
  
 	

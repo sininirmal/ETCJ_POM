@@ -39,11 +39,11 @@ public class CheckoutPage extends Base {
 	
 	
 	
-	
+
 public CheckoutPage() {
 	PageFactory.initElements(driver, this);
 }
-public void seatselection(String seat1) throws Throwable {
+public void restrictedSeatSelectionAndCheckout(String seat1) throws Throwable {
 
 driver.switchTo().frame(0);
 Dimension canvasdimension =canvas.getSize();
@@ -63,22 +63,23 @@ actions.moveToElement(canvas, 49, 175).click().build().perform();
 
 System.out.println("canvas x :"+button_X);
 System.out.println("canvas Y :"+button_Y);
+//actions.moveToElement(canvas, 0, 0).build().perform();
 
 //Dimension visibleareadimension =seatVisibleArea.getSize();
 //System.out.println("visible area size :"+visibleareadimension);
 //int visiblearea_center_x = visibleareadimension.getWidth()/2;
 //int visiblearea_center_y = visibleareadimension.getHeight()/2;
-int i=-1;
-int j=-1;
-
+//int i=-1;
+//int j=-3;
+Thread.sleep(5000);
 //int visible_button_X= (visiblearea_center_x/8)*3;
 //int visible_button_Y= (visiblearea_center_y/8)*6;
 //int visible_button_X= (visiblearea_center_x/16)*1;
 //int visible_button_Y= (visiblearea_center_y/16)*1;
 //while(i>8)
 //	while(j>16) {
-		int visible_button_X= (canvas_center_x/8)*i;
-		int visible_button_Y= (canvas_center_y/8)*j;
+		int visible_button_X= (canvas_center_x/8)*-1;
+		int visible_button_Y= (canvas_center_y/8)*-1;
 //		int button_X= (canvas_center_x/6)*1;
 //		int button_Y= (canvas_center_y/3)*2;
 		
@@ -95,15 +96,16 @@ int j=-1;
 		
 //		try {
 //			if(driver.findElement(seat).isDisplayed()) {
-				//actions1.moveToElement(seatVisibleArea,visible_button_X ,visible_button_Y ).click().build().perform();Thread.sleep(5000);
-				actions1.moveToElement(seatVisibleArea).moveByOffset(visible_button_X, visible_button_Y).click().build().perform();
+				//actions1.moveToElement(seatVisibleArea,-20 ,-25 ).click().build().perform();Thread.sleep(5000);
+				actions1.moveToElement(seatVisibleArea).moveByOffset(-5 ,-25 ).click().build().perform();
+				Thread.sleep(1000);
 				System.out.println("visible area width:"+visible_button_X);
 				System.out.println("visible area Height:"+visible_button_Y);
 				String parentwindow = driver.getWindowHandle();
 				driver.switchTo().window(parentwindow);
-				Thread.sleep(1000);
 				JavascriptExecutor js = (JavascriptExecutor)driver;
 				js.executeScript("arguments[0].click()", addtobasket);
+				
 //				seatInfo.isDisplayed();
 //				break;
 //				}
@@ -114,43 +116,27 @@ int j=-1;
 //	}
 		
 	
-		
-//		driver.switchTo().defaultContent();
-		
-//		List<String> allwindows = new ArrayList<>(driver.getWindowHandles());
-//		driver.switchTo().window(allwindows.get(1));
-		
-		
-//		addtobasket.click();
 		Thread.sleep(15000);
-//		if (seat.isDisplayed()) {
-//			actions1.moveToElement(visiblearea, visible_button_X, visible_button_Y).click().build().perform();
-//		}
-//	}}
 	
-		
-		
 
-//for(int i=visiblearea_center_x;i<visibleareadimension.getWidth(); i=1+10)
-//{
-//	for (int j=visiblearea_center_y;j<visibleareadimension.getHeight();j=j+50) {
-//	Actions actions1 = new Actions(driver);
-//	actions1.moveToElement(visiblearea, i, j).perform();
-//	System.out.println("visible_button_X  :"+i);
-//	System.out.println("visible_button_Y  :"+j);
-//	if (seat.isDisplayed()) {
-//		actions1.moveToElement(visiblearea, i, j).click().build().perform();
-//	}
+}
+public void seatselectionandCheckout(String seat1) throws InterruptedException {
 	
-//}}
-
-
-
-//Actions actions1 = new Actions(driver);
-////actions.moveToElement(canvas, button_X, button_Y).click().perform();
-//actions1.moveToElement(visiblearea, visible_button_X, visible_button_Y).click().build().perform();
-
-
+	driver.switchTo().frame(0);
+	Actions actions = new Actions(driver);
+	System.out.println("canvas area size :"+canvas.getSize());
+	actions.moveToElement(canvas, 49, 175).click().build().perform();
+	Thread.sleep(5000);
+	Actions actions1 = new Actions(driver);
+	actions1.moveToElement(seatVisibleArea).moveByOffset(-100 ,-25 ).click().build().perform();
+	Thread.sleep(1000);
+	String parentwindow = driver.getWindowHandle();
+	driver.switchTo().window(parentwindow);
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	js.executeScript("arguments[0].click()", addtobasket);
+	Thread.sleep(10000);
+	
+	
 }
 
 
