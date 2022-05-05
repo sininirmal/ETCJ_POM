@@ -20,7 +20,7 @@ pipeline {
             }
             post {
                 success {
-                    TestNG report 'test-output/index.html' 
+                    Testreport 'test-output/index.html' 
                 }
             }
         }
